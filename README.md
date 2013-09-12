@@ -14,6 +14,7 @@ Sign-Up-Form
 >
 > - Change error label and form styles in CSS & HTML
 > - Remove comments in contact.php & custom.js file
+> - Add loader.gif into images/ folder
 
 #####File: contact.php
 ```
