@@ -1,7 +1,8 @@
 Sign-Up-Form
 =============
 
-###An quick form to be used in websites. Comes with client & server validation with ajax
+###An quick form to be used in websites.
+###Code with client & server validation with ajax.
 
 ####Settings to change:
 
@@ -35,9 +36,9 @@ function showRecaptcha(element) {
  * @copyright 2011
  */
 
-defined('ADMIN1EMAIL')     ? null : define('ADMIN1', 'PERSONAL_EMAIL_TO_TEST');
+defined('ADMIN1EMAIL')? null : define('ADMIN1', 'PERSONAL_EMAIL_TO_TEST');
 defined('ADMIN1NAME') ? null : define('ADMIN1NAME', 'PERSONAL_NAME');
-defined('ADMIN2EMAIL')     ? null : define('ADMIN2', 'CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL');
+defined('ADMIN2EMAIL')? null : define('ADMIN2', 'CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL');
 defined('ADMIN2NAME') ? null : define('ADMIN2NAME', 'CUSTOMER_NAME_OR_DOMAIN');
 defined('MAILPORT')   ? null : define('MAILPORT', 465);
 defined ('MAILHOST')  ? null : define('MAILHOST', 'NAME_OF_MAILHOST_USING_SSL');
