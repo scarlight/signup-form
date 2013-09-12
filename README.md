@@ -5,30 +5,31 @@ Sign-Up-Form
 
 ####Settings to change:
 
+#####File: contact.php
 ```
-file: contact.php
-
 $privatekey = "GET_THE_PRIVATE_KEY_HERE >> HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE";
 
 // email configuration:
 $mail->SMTPDebug = false;
 $mail = new PHPMailer(true);
 $mail->Subject = "ADD_YOUR_EMAIL_SUBJECT_HERE";
+```
 
 -----------------------------------------------------------------------
 
-file: js/custom.js
-
+#####File: js/custom.js
+```
 function showRecaptcha(element) {
     Recaptcha.create("GET_THE_PUBLIC_KEY_HERE >> HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE", element, {
         theme: "white"
     });
 }showRecaptcha("captcha-test");
+```
 
 -----------------------------------------------------------------------
 
-file: include/configz.php
-
+#####File: include/configz.php
+```
 /**
  * @author ScarLight
  * @copyright 2011
