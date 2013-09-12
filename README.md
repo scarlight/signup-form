@@ -10,7 +10,7 @@ Sign-Up-Form
 > - PHPMailer [https://github.com/PHPMailer/PHPMailer]
 
 ####Settings to change:
-> **NOTE:** Below are few things might require editing:
+> **NOTE:** Below are the settings to change according to project:
 >
 > - Change error label and form styles in CSS & HTML
 > - Remove comments in contact.php & custom.js file
@@ -74,8 +74,8 @@ require_once(LIBRARY.DS.'recaptchalib.php');
 ```
 
 ####TODO:
-- Clean form to be more generic so its easier to edit CSS in other project.
-- Provide standard css selector in custom.js for portability.
-- Remove restrictive label assignment in custom.js.
-- Standardise JSON parameters when request from server match it to form's input name attribute
-- Isolate functions in feedback to classes.
+- Clean form style to be more generic then its easier to edit the CSS in other project.
+- Provide standard css selector choice in custom.js for portability.
+- Remove restrictive error label placements in custom.js.
+- Standardise JSON parameters when requesting from server, then match it to form's input name attribute
+- Isolate functions in feedback.php to meaningful classes.
