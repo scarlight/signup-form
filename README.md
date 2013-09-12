@@ -1,14 +1,13 @@
 Sign-Up-Form
 =============
 
-#An quick form to be used in websites. Comes with client & server validation with ajax
+###An quick form to be used in websites. Comes with client & server validation with ajax
 
 ####Settings to change:
 
-##### Header example {#my-header}
-
 ```
-// contact.php
+file: contact.php
+
 $privatekey = "GET_THE_PRIVATE_KEY_HERE >> HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE";
 
 // email configuration:
@@ -16,16 +15,20 @@ $mail->SMTPDebug = false;
 $mail = new PHPMailer(true);
 $mail->Subject = "ADD_YOUR_EMAIL_SUBJECT_HERE";
 
-===========================
-// js/custom.js
+-----------------------------------------------------------------------
+
+file: js/custom.js
+
 function showRecaptcha(element) {
     Recaptcha.create("GET_THE_PUBLIC_KEY_HERE >> HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE", element, {
         theme: "white"
     });
 }showRecaptcha("captcha-test");
 
-===========================
-// include/configz.php
+-----------------------------------------------------------------------
+
+file: include/configz.php
+
 /**
  * @author ScarLight
  * @copyright 2011
