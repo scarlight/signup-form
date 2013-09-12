@@ -1,8 +1,8 @@
 Sign-Up-Form
 =============
 
-###An quick form to be used in websites.
-###Code with client & server validation with ajax.
+###A quick form to be used in websites.
+Code with client & server validation with ajax.
 
 ####Settings to change:
 
