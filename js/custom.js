@@ -140,21 +140,21 @@ cs(document).ready(function(){
         },
         messages:{
             name:{
-                required:"Please enter a name",
+                required:"Please enter a name.",
                 minlength:"Name minimum 3 letters."
             },
             phone:{
                 required:"Please enter a contact number.",
                 digits:"Only digits allowed.",
-                maxlength:"Phone number incorrect length"
+                maxlength:"Phone number incorrect length."
             },
             email:{
                 required:"Please provide an email.",
-                email:"Please provide a valid email"
+                email:"Please provide a valid email."
             },
             message:{
                 required:"Please provide your feedback.",
-                maxlength:"Message exceeds 300 character"
+                maxlength:"Message exceeds 300 character."
             },
             recaptcha_response_field:{
                 required:"Please enter captcha."

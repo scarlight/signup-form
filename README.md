@@ -2,9 +2,19 @@ Sign-Up-Form
 =============
 
 ###A quick form to be used in websites.
-Code with client & server validation with ajax.
+###coded with client & server validation using ajax.
+
+####Dependency:
+> - jquery 1.10.2
+> - jquery validate [http://jqueryvalidation.org/]
+> - php 5.4 & above
+> - PHPMailer [https://github.com/PHPMailer/PHPMailer]
 
 ####Settings to change:
+> **NOTE:** Below are few things might require editing:
+>
+> - Change error label and form styles in CSS & HTML
+> - Remove comments in contact.php & custom.js file
 
 #####File: contact.php
 ```
