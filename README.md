@@ -1,8 +1,7 @@
 Sign-Up-Form
 =============
 
-###A quick form to be used in websites.
-###coded with client & server validation using ajax.
+###A quick form to be used in any websites. Now with client & server validation using ajax.
 
 ####Dependency:
 > - jquery 1.10.2
@@ -74,3 +73,9 @@ require_once(LIBRARY.DS.'PHPMailer'.DS.'class.pop3.php');
 require_once(LIBRARY.DS.'recaptchalib.php');
 ```
 
+####TODO:
+- Clean form to be more generic so its easier to edit CSS in other project.
+- Provide standard css selector in custom.js for portability.
+- Remove restrictive label assignment in custom.js.
+- Standardise JSON parameters when request from server match it to form's input name attribute
+- Isolate functions in feedback to classes.
