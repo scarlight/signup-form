@@ -143,12 +143,12 @@ if(($_SERVER['REQUEST_METHOD'] == 'POST') && (!empty($_POST['submit']))){
             $mail->SMTPSecure = "ssl";
             $mail->Port = MAILPORT;
             $mail->Host = MAILHOST;
-            $mail->Username = MAILUSER;
+            $mail->Username = MAILFROM;
             $mail->Password = MAILPASS;
-            $mail->SetFrom(MAILFROM, ADMIN2NAME);
+            $mail->SetFrom(MAILFROM, MAILUSER);
             $mail->AddAddress(ADMIN1EMAIL, ADMIN1NAME);
-            $mail->AddAddress(ADMIN2EMAIL, ADMIN2NAME);
-            $mail->Subject = "ADD_YOUR_EMAIL_SUBJECT_HERE";
+            $mail->AddBCC(ADMIN2EMAIL, ADMIN2NAME);
+            $mail->Subject = "New enquiry received from your website!";
             $createdTime = $u->datetime_to_text($u->mysql_time());
             $mail->Body =<<<EMAILBODY
 <!DOCTYPE html>
