@@ -5,19 +5,20 @@ Sign-Up-Form
 
 ####Javascript Dependency:
 #####Standard
-> - jquery-1.10.2.min.js
-> - bootstrap.min.js
-> - jquery.easing.1.3.js
-> - jquery.carouFredSel.js
-> - TweenMax.min.js
-> - custom.min.js
+>- jquery-1.10.2.min.js
+>- bootstrap.min.js
+>- jquery.easing.1.3.js
+>- jquery.carouFredSel.js
+>- TweenMax.min.js
+>- custom.min.js
+
 #####Needed
-> - jquery-1.10.2.min.js [included as standard]
-> - jquery.easing.1.3.js
-> - jquery.validate.min.js    [http://jqueryvalidation.org/]
-> - additional-methods.min.js [http://jqueryvalidation.org/] [optional]
-> - [http://www.google.com/recaptcha/api/js/recaptcha_ajax.js] [optional]
-> - jquery.form.js            [http://malsup.com/jquery/form/]
+>- jquery-1.10.2.min.js [included as standard]
+>- jquery.easing.1.3.js
+>- jquery.validate.min.js    [http://jqueryvalidation.org/]
+>- additional-methods.min.js [http://jqueryvalidation.org/] [optional]
+>- [http://www.google.com/recaptcha/api/js/recaptcha_ajax.js] [optional]
+>- jquery.form.js            [http://malsup.com/jquery/form/]
 
 ####PHP Dependency:
 #####Needed [mainly inside include/ folder]
@@ -109,5 +110,5 @@ require_once(LIBRARY.DS.'recaptchalib.php');
 
 ####Changes:
 #####2.0.0:
-> - Updated readme
-> - Moved the form to a boilerplate template to work with preprocessor for less and javascript
+>- Updated readme
+>- Moved the form to a boilerplate template to work with preprocessor for less and javascript
