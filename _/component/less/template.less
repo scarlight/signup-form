@@ -1,0 +1,273 @@
+@import "others/modified-elements.less"; //https://github.com/Oreolek/elements (better with namespace) also add my own
+@import "ma-project/template-mixin.less";
+@import "ma-project/colorcode.less";
+//@import (less) "animate-custom.css"; use it if needed https://daneden.me/animate/
+
+html[data-useragent*='MSIE 10.0'] {} //sample css to target ie10; must add the javascript part to work
+
+h1,h2,h3,h4,h5,h6{ -webkit-font-smoothing: subpixel-antialiased; -webkit-text-stroke: 0.15px; }
+
+//**********************************************************************************************//
+// GLOBAL VARIABLES.
+//**********************************************************************************************//
+@full-browser-width: 100%;
+@full-browser-height: 100%;
+@viewport-width: 100%;
+@working-width: 960px;
+@template-base-color: #282828; //new
+
+//**********************************************************************************************//
+// OTHER MISC CSS FOR THIS TEMPLATE.
+//**********************************************************************************************//
+.whatcolor-text { color: #888888; }
+
+
+
+
+
+//**********************************************************************************************//
+// CONTAINER LAYOUT FULL OR SPECIFIED, ALSO IT CAN BE MADE FIXED FOOTER IF NEEDED.
+//**********************************************************************************************//
+html, body { height:100%; }
+#browser-wrapper, #main-wrapper, #viewport-wrapper { #wrap > .vrelative; }
+#browser-wrapper{
+    width          : @full-browser-width;
+    min-width      : @full-browser-width;
+    height         : @full-browser-height;
+    min-height     : @full-browser-height;
+    margin         : 0 auto;
+}
+#main-wrapper{
+    width          : @full-browser-width;
+    min-width      : @full-browser-width;
+    height         : auto !important;
+    height         : @full-browser-height;
+    min-height     : @full-browser-height;
+    overflow       : hidden;
+    margin         : 0 auto;
+    //.oilpaper();
+}
+#viewport-wrapper{
+    width          : @viewport-width;
+    height         : auto;
+    margin         : 0 auto;
+    padding-bottom : 60px; //modify - optional if you need fixed footer (must match the footer height)
+}
+
+
+//**********************************************************************************************//
+// COMPANY LOGO. need to improve with .ir technique
+//**********************************************************************************************//
+#COMPANYNAME-company-logo
+{
+    // setting here
+    @logo-width:64px;
+    @logo-height:63px;
+    @logo-background:transparent url(../images/logo.png) no-repeat center center scroll;
+
+    #wrap > .vrelative;
+    width:@logo-width;
+    height:@logo-height;
+    line-height:0;
+    margin-left:0;
+    float: left;
+
+    .bg(18);
+    #transform > .opacity(0.8);
+
+    h1{
+        #wrap > .vrelative;
+        line-height:0;
+        text-indent:-99999px;
+        a
+        {
+            #wrap > .vrelative;
+            line-height:0;
+            font-size:1.2em;
+            text-indent:0;
+            span
+            {
+                #wrap > .vrelative;
+                width:@logo-width;
+                height:@logo-height;
+                text-indent:0;
+                background:@logo-background;
+            }
+        }
+    }
+}
+
+
+
+
+//**********************************************************************************************//
+// START COMPANYNAME BODY STRUCTURE.
+//**********************************************************************************************//
+#COMPANYNAME-header-wrp
+{
+    #wrap > .vrelative;
+    width:100%;
+    height:auto;
+    margin: 0px auto;
+
+    .bg(4);
+    #transform > .opacity(0.8);
+}
+
+#COMPANYNAME-header
+{
+    #wrap > .vrelative;
+    width:@working-width;
+    height: auto; //modify - optional
+    margin:0 auto;
+
+    .bg(10);
+    #transform > .opacity(0.8);
+}
+
+#COMPANYNAME-body-wrp
+{
+    #wrap > .vrelative;
+    width:100%;
+    height:auto;
+    margin: 0px auto;
+}
+
+#COMPANYNAME-body
+{
+    #wrap > .vrelative;
+    width:@working-width;
+    height:auto; //modify - optional
+    margin:0 auto;
+}
+
+#COMPANYNAME-footer-wrp
+{
+    #wrap > .vabsolute;
+    width:100%;
+    height:auto;
+    bottom:0;
+
+    .bg(2);
+    #transform > .opacity(0.8);
+}
+
+#COMPANYNAME-footer
+{
+    #wrap > .vrelative;
+    width:@working-width;
+    height:30px;//modify - optional
+    margin:0 auto;
+
+    .bg(8);
+    #transform > .opacity(0.8);
+}
+
+
+/**********************************************************************************************/
+/* START - COMPANYNAME CONTACT FORM */
+/**********************************************************************************************/
+
+#COMPANYNAME-contactform
+{
+    #wrap > .vrelative();
+    width: 390px;
+    height:auto;
+    font: normal normal 400 14px/1.2 "Open Sans", "Arial", sans-serif; margin: 0 auto;
+
+    // form title and ajax responce
+    h1#title{ font: normal normal 600 30px/1.2 "Open Sans", "Arial", sans-serif; margin: 0 auto; }
+
+    #responce p{ color: green; }
+    #responce p.error{ color: #FF4F03; }
+
+    // all the form elements
+    form#contactform{
+        #wrap > .vrelative();
+        width: 100%;
+        height:auto;
+        label{
+            #wrap > .vrelative(inline-block);
+            width:390px;
+            padding: 5px 0 0;
+            margin-bottom:10px;
+            font: normal normal 400 14px/1.5 "Open Sans", "Arial", sans-serif; margin: 0 auto;
+        }
+        label.error{
+            position: absolute;
+            display: inline;
+            width: auto;
+            height: auto;
+            padding: 5px;
+            top: 25px;
+            right: 4px;
+            color: #ffffff;
+            background-color: #FF4F03;
+            font-size: 0.9em;
+            border: solid 1px #ff0000;
+            -webkit-box-shadow: 0px 1px 3px 0px #999999;
+                    box-shadow: 0px 1px 3px 0px #999999;
+            -webkit-border-radius: 5px;
+                moz-border-radius: 5px;
+                    border-radius: 5px;
+            z-index: 2;
+        }
+        input{
+            #wrap > .vrelative(inline-block);
+            width:370px;
+            padding: 5px 8px;
+            border:solid 1px #ccc;
+            z-index: 1;
+        }
+        textarea{
+            #wrap > .vrelative(inline-block);
+            width:378px;
+            padding: 5px;
+            border:solid 1px #ccc;
+            z-index: 1;
+        }
+
+        // for the loader when form is submited
+        .processing{
+            background: transparent url(../images/loader.gif) no-repeat 100% 0% scroll;
+            z-index: 2;
+        }
+
+        // for captcha
+        #captcha-wrp{
+            #wrap > .vrelative();
+
+            label.error{ top:0px; right: 0px; }
+
+            .recaptcha_only_if_privacy { margin-top: -3px; }
+
+        }
+        #recaptcha_area{ float:right; }
+        .recaptcha_input_area label.error{ font-size: 1.2em; top:2px; right: -137px; }
+
+        // for submit and reset buttons
+        #action-button{
+            #wrap > .vrelative(inline-block);
+            float:right;
+            margin-top: 10px;
+            input{
+                #wrap > .vrelative(inline-block);
+                background: #e8e8e8;
+                border: solid 1px #d8d8d8;
+                float:left;
+                width:auto;
+                padding: 8px 25px;
+                margin-left: 20px;
+                cursor: pointer;
+                &:hover{
+                    background: #d8d8d8; border: solid 1px #b8b8b8; color:#444444;
+                }
+            }
+        }
+
+    }
+}
+
+/**********************************************************************************************/
+/* END - COMPANYNAME CONTACT FORM */
+/**********************************************************************************************/

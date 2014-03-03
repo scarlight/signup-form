@@ -1,0 +1,113 @@
+<h1 id="sign-up-form">Sign-Up-Form</h1>
+<h3 id="a-quick-form-to-be-used-in-any-websites-now-with-client-server-validation-using-ajax-">A quick form to be used in any websites. Now with client &amp; server validation using ajax.</h3>
+<h4 id="javascript-dependency-">Javascript Dependency:</h4>
+<h5 id="standard">Standard</h5>
+<blockquote>
+<ul>
+<li>jquery-1.10.2.min.js</li>
+<li>bootstrap.min.js</li>
+<li>jquery.easing.1.3.js</li>
+<li>jquery.carouFredSel.js</li>
+<li>TweenMax.min.js</li>
+<li>custom.min.js<h5 id="needed">Needed</h5>
+</li>
+<li>jquery-1.10.2.min.js [included as standard]</li>
+<li>jquery.easing.1.3.js</li>
+<li>jquery.validate.min.js    [<a href="http://jqueryvalidation.org/">http://jqueryvalidation.org/</a>]</li>
+<li>additional-methods.min.js [<a href="http://jqueryvalidation.org/">http://jqueryvalidation.org/</a>] [optional]</li>
+<li>[<a href="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js">http://www.google.com/recaptcha/api/js/recaptcha_ajax.js</a>] [optional]</li>
+<li>jquery.form.js            [<a href="http://malsup.com/jquery/form/">http://malsup.com/jquery/form/</a>]</li>
+</ul>
+</blockquote>
+<h4 id="php-dependency-">PHP Dependency:</h4>
+<h5 id="needed-mainly-inside-include-folder-">Needed [mainly inside include/ folder]</h5>
+<blockquote>
+<ul>
+<li>php 5.4 &amp; above</li>
+<li>PHPMailer [<a href="https://github.com/PHPMailer/PHPMailer">https://github.com/PHPMailer/PHPMailer</a>]</li>
+<li>configz.php</li>
+<li>Util.php</li>
+<li>recaptchalib.php</li>
+<li>error_log</li>
+</ul>
+</blockquote>
+<h4 id="html-dependency-">HTML Dependency:</h4>
+<h5 id="needed">Needed</h5>
+<blockquote>
+<ul>
+<li>loader.gif into images/ folder</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="settings-to-change-">Settings to change:</h4>
+<blockquote>
+<p><strong>NOTE:</strong> Below are the settings to change according to project:</p>
+<ul>
+<li>Change error label and form styles in CSS &amp; HTML</li>
+<li>Remove comments in contact.php &amp; custom.js file</li>
+</ul>
+</blockquote>
+<h5 id="file-contact-php">File: contact.php</h5>
+<pre><code>$privatekey = &quot;GET_THE_PRIVATE_KEY_HERE &gt;&gt; HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE&quot;;
+
+// email configuration:
+$mail-&gt;SMTPDebug = false;
+$mail = new PHPMailer(true);
+$mail-&gt;Subject = &quot;ADD_YOUR_EMAIL_SUBJECT_HERE&quot;;</code></pre>
+<hr>
+<h5 id="file-js-custom-js">File: js/custom.js</h5>
+<pre><code>function showRecaptcha(element) {
+    Recaptcha.create(&quot;GET_THE_PUBLIC_KEY_HERE &gt;&gt; HTTPS://WWW.GOOGLE.COM/RECAPTCHA/ADMIN/CREATE&quot;, element, {
+        theme: &quot;white&quot;
+    });
+}showRecaptcha(&quot;captcha-test&quot;);</code></pre>
+<hr>
+<h5 id="file-include-configz-php">File: include/configz.php</h5>
+<pre><code>/**
+ * @author ScarLight
+ * @copyright 2011
+ */
+
+defined(&#39;ADMIN1EMAIL&#39;)? null : define(&#39;ADMIN1&#39;, &#39;PERSONAL_EMAIL_TO_TEST&#39;);
+defined(&#39;ADMIN1NAME&#39;) ? null : define(&#39;ADMIN1NAME&#39;, &#39;PERSONAL_NAME&#39;);
+defined(&#39;ADMIN2EMAIL&#39;)? null : define(&#39;ADMIN2&#39;, &#39;CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL&#39;);
+defined(&#39;ADMIN2NAME&#39;) ? null : define(&#39;ADMIN2NAME&#39;, &#39;CUSTOMER_NAME_OR_DOMAIN&#39;);
+defined(&#39;MAILPORT&#39;)   ? null : define(&#39;MAILPORT&#39;, 465);
+defined (&#39;MAILHOST&#39;)  ? null : define(&#39;MAILHOST&#39;, &#39;NAME_OF_MAILHOST_USING_SSL&#39;);
+defined (&#39;MAILFROM&#39;)  ? null : define(&#39;MAILFROM&#39;, &#39;CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL&#39;);
+defined(&#39;MAILUSER&#39;)   ? null : define(&#39;MAILUSER&#39;, &#39;CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL&#39;);
+defined(&#39;MAILPASS&#39;)   ? null : define(&#39;MAILPASS&#39;, &#39;CUSTOMER_EMAIL_OR_DEFAULT_DOMAIN_EMAIL_PASSWORD&#39;);
+
+//localhost setting for testing
+defined(&#39;DS&#39;) ? null : define(&#39;DS&#39;, DIRECTORY_SEPARATOR);
+defined(&#39;SITEROOT&#39;) ? null : define(&#39;SITEROOT&#39;, &#39;C:/xampp/htdocs/sites/sandbox/THE_FOLDER&#39;);
+defined(&#39;LIBRARY&#39;) ? null : define(&#39;LIBRARY&#39;, SITEROOT.DS.&#39;include&#39;);
+
+//live host setting
+//defined(&#39;DS&#39;) ? null : define(&#39;DS&#39;, DIRECTORY_SEPARATOR);
+//defined(&#39;SITEROOT&#39;) ? null : define(&#39;SITEROOT&#39;, DS.&#39;home&#39;.DS.&#39;THE_CUSTOMER_DOMAIN&#39;.DS.&#39;THE_PUBLIC_FOLDER&#39;);
+//defined(&#39;LIBRARY&#39;) ? null : define(&#39;LIBRARY&#39;, SITEROOT.DS.&#39;include&#39;);
+
+require_once(LIBRARY.DS.&#39;configz.php&#39;);
+require_once(LIBRARY.DS.&#39;Util.php&#39;);
+require_once(LIBRARY.DS.&#39;PHPMailer&#39;.DS.&#39;class.phpmailer.php&#39;);
+require_once(LIBRARY.DS.&#39;PHPMailer&#39;.DS.&#39;class.smtp.php&#39;);
+require_once(LIBRARY.DS.&#39;PHPMailer&#39;.DS.&#39;class.pop3.php&#39;);
+require_once(LIBRARY.DS.&#39;recaptchalib.php&#39;);</code></pre>
+<h4 id="todo-">TODO:</h4>
+<ul>
+<li>Clean form style to be more generic then its easier to edit the CSS in other project. [on-going]</li>
+<li>Provide standard css selector choice in custom.js for portability.</li>
+<li>Remove restrictive error label placements in custom.js.</li>
+<li>Standardise JSON parameters when requesting from server, then match it to form&#39;s input name attribute</li>
+<li>Isolate functions in feedback.php to meaningful classes.</li>
+</ul>
+<hr>
+<h4 id="changes-">Changes:</h4>
+<h5 id="2-0-0-">2.0.0:</h5>
+<blockquote>
+<ul>
+<li>Updated readme</li>
+<li>Moved the form to a boilerplate template to work with preprocessor for less and javascript</li>
+</ul>
+</blockquote>

@@ -1,0 +1,55 @@
+.oilpaper(){
+    background: transparent url(../_/images/oilpaper/index.jpg) no-repeat center 0 scroll;
+}
+
+#wrap
+{
+    .default(@position:relative, @display:block)
+    {
+        position:@position;
+        display:@display;
+    }
+    .void()
+    {
+        margin:0;
+        padding:0;
+        border:0;
+    }
+    .vrelative(@display:block)
+    {
+        .default(relative, @display);
+        .void();
+    }
+    .vabsolute(@display:block)
+    {
+        .default(absolute, @display);
+        .void();
+    }
+}
+
+.clear     { clear:both; }
+.hide      { display:none; }
+.bg-off    { background:none; }
+
+.floatl    { float:left; }
+.floatr    { float:right; }
+
+img.left   { display:block; float:left; }
+img.right  { display:block; float:right; }
+img.center { display:block; margin: 0px auto; }
+
+// for wordpress
+img.alignleft   { display:block; float:left; }
+img.alignright  { display:block; float:right; }
+img.aligncenter { display:block; margin: 0px auto; }
+
+.text-left    { display:block; text-align:left; }
+.text-right    { display:block; text-align:right; }
+.text-center   { display:block; text-align:center; }
+.text-justify  { display:block; text-align:justify; }
+
+ul.plain, ol.plain { list-style:none; margin-left:0px; }
+
+
+//form-mixin
+//list-mixin

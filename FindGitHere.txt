@@ -1,0 +1,6 @@
+Clone URL
+FortAwesome   - https://github.com/FortAwesome/Font-Awesome.git
+GreenSock     - https://github.com/greensock/GreenSock-JS.git
+CarouFredSel  - https://github.com/gilbitron/carouFredSel.git
+jQuery        - http://code.jquery.com/jquery-1.10.2.min.js
+jQuery easing - http://gsgd.co.uk/sandbox/jquery/easing/
