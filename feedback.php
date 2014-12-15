@@ -1,5 +1,7 @@
 <?php
 
+// soon to convert into a class
+
 include_once("include/configz.php");
 
 $success_reply = array();
